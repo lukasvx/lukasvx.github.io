@@ -28,8 +28,8 @@
     --font-body: "VT323", ui-monospace, "DejaVu Sans Mono", Menlo, Consolas, monospace;
     --font-pixel: "Silkscreen", "VT323", ui-monospace, monospace;
 
-    --cursor: url("../img/cursor.png?v=24") 0 0, auto;
-    --cursor-link: url("../img/cursor-link.png?v=24") 0 0, pointer;
+    --cursor: url("../img/cursor.png?v=25") 0 0, auto;
+    --cursor-link: url("../img/cursor-link.png?v=25") 0 0, pointer;
 }
 
 * {
@@ -59,7 +59,7 @@ body {
     bottom: 0;
     left: 0;
     z-index: -3;
-    background: var(--bg) url("../img/scene.png?v=24") 78.125% bottom / cover no-repeat;
+    background: var(--bg) url("../img/scene.png?v=25") 78.125% bottom / cover no-repeat;
     image-rendering: pixelated;
 }
 
@@ -138,9 +138,9 @@ body {
     animation: snowfall var(--dur) linear infinite;
 }
 
-.f1 { --tile: 300px; --dur: 38s; background-image: url("../img/snow-1.svg?v=24"); }
-.f2 { --tile: 400px; --dur: 24s; background-image: url("../img/snow-2.svg?v=24"); }
-.f3 { --tile: 520px; --dur: 15s; background-image: url("../img/snow-3.svg?v=24"); }
+.f1 { --tile: 300px; --dur: 38s; background-image: url("../img/snow-1.svg?v=25"); }
+.f2 { --tile: 400px; --dur: 24s; background-image: url("../img/snow-2.svg?v=25"); }
+.f3 { --tile: 520px; --dur: 15s; background-image: url("../img/snow-3.svg?v=25"); }
 
 .grain {
     position: fixed;

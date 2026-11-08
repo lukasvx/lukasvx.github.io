@@ -39,7 +39,6 @@
 html {
     -webkit-text-size-adjust: 100%;
     background: var(--bg);
-
     font-size: clamp(12px, min(1.9vh, 4.2vw), 16px);
 }
 
@@ -96,7 +95,6 @@ body {
     width: var(--u, 0px);
     height: var(--u, 0px);
     background: var(--smoke-color);
-
     box-shadow:
         var(--u, 0px) 0 0 var(--smoke-color),
         calc(var(--u, 0px) * -1) 0 0 var(--smoke-color),
@@ -190,7 +188,6 @@ body::before {
     font-size: clamp(2rem, 10vw, 3.4rem);
     letter-spacing: 0.06em;
     color: var(--accent);
-
     text-shadow:
         -2px 0 0 var(--bg), 2px 0 0 var(--bg), 0 -2px 0 var(--bg), 0 2px 0 var(--bg),
         -2px -2px 0 var(--bg), 2px -2px 0 var(--bg), -2px 2px 0 var(--bg), 2px 2px 0 var(--bg),

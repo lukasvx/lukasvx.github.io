@@ -28,15 +28,11 @@
         root.style.setProperty("--u", scale + "px");
     }
 
-    function onResize() {
-        placeGlow();
-    }
-
     placeGlow();
 
-    window.addEventListener("resize", onResize);
+    window.addEventListener("resize", placeGlow);
     if (scene && window.ResizeObserver) {
-        new ResizeObserver(onResize).observe(scene);
+        new ResizeObserver(placeGlow).observe(scene);
     }
 
     var clock = document.getElementById("local-time");

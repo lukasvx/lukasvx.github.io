@@ -28,8 +28,8 @@
     --font-body: "VT323", ui-monospace, "DejaVu Sans Mono", Menlo, Consolas, monospace;
     --font-pixel: "Silkscreen", "VT323", ui-monospace, monospace;
 
-    --cursor: url("../img/cursor.png?v=23") 0 0, auto;
-    --cursor-link: url("../img/cursor-link.png?v=23") 0 0, pointer;
+    --cursor: url("../img/cursor.png?v=24") 0 0, auto;
+    --cursor-link: url("../img/cursor-link.png?v=24") 0 0, pointer;
 }
 
 * {
@@ -59,7 +59,7 @@ body {
     bottom: 0;
     left: 0;
     z-index: -3;
-    background: var(--bg) url("../img/scene.png?v=23") 78.125% bottom / cover no-repeat;
+    background: var(--bg) url("../img/scene.png?v=24") 78.125% bottom / cover no-repeat;
     image-rendering: pixelated;
 }
 
@@ -138,9 +138,9 @@ body {
     animation: snowfall var(--dur) linear infinite;
 }
 
-.f1 { --tile: 300px; --dur: 38s; background-image: url("../img/snow-1.svg?v=23"); }
-.f2 { --tile: 400px; --dur: 24s; background-image: url("../img/snow-2.svg?v=23"); }
-.f3 { --tile: 520px; --dur: 15s; background-image: url("../img/snow-3.svg?v=23"); }
+.f1 { --tile: 300px; --dur: 38s; background-image: url("../img/snow-1.svg?v=24"); }
+.f2 { --tile: 400px; --dur: 24s; background-image: url("../img/snow-2.svg?v=24"); }
+.f3 { --tile: 520px; --dur: 15s; background-image: url("../img/snow-3.svg?v=24"); }
 
 .grain {
     position: fixed;
@@ -317,111 +317,20 @@ main {
     text-shadow: 0 0 10px rgba(156, 194, 245, 0.7);
 }
 
-.ttt-body {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
-.ttt-board {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 3px;
-    flex: none;
-    width: 6rem;
-}
-
-.ttt-side {
-    flex: 1 1 0;
-    min-width: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
-    text-align: center;
-}
-
-.ttt-cell {
-    aspect-ratio: 1;
-    min-height: 0;
-    padding: 0;
-    font-family: var(--font-pixel);
-    font-size: 0.8rem;
-    line-height: 1;
-    color: var(--text);
-    background: #050912;
-    border: 2px solid;
-    border-color: var(--bevel-dark) var(--bevel-light) var(--bevel-light) var(--bevel-dark);
-    cursor: var(--cursor-link);
-    transition: background 0.2s;
-}
-
-.ttt-cell[aria-disabled="true"] {
-    cursor: var(--cursor);
-}
-
-.ttt-cell:not([aria-disabled="true"]):hover,
-.ttt-cell:not([aria-disabled="true"]):focus-visible {
-    background: rgba(255, 178, 62, 0.16);
-}
-
-.ttt-cell:focus-visible {
-    outline: 1px dashed var(--warm);
-    outline-offset: 1px;
-}
-
-.ttt-cell.x {
-    color: var(--warm);
-}
-
-.ttt-cell.o {
-    color: var(--accent);
-}
-
-.ttt-cell.win {
-    background: rgba(255, 178, 62, 0.28);
-}
-
-.ttt-body .ttt-status {
+.links {
+    list-style: none;
     margin: 0;
-    min-height: 2.3em;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: var(--muted);
-    font-size: 0.95em;
-    line-height: 1.1;
+    padding: 0;
 }
 
-.ttt-new {
-    display: block;
-    margin: 0 auto;
-    padding: 6px 10px;
-    font-family: var(--font-pixel);
-    font-size: 0.55rem;
-    letter-spacing: 0.06em;
-    text-transform: lowercase;
-    color: var(--warm);
-    background: #0a1019;
-    border: 2px solid;
-    border-color: var(--bevel-light) var(--bevel-dark) var(--bevel-dark) var(--bevel-light);
-    cursor: var(--cursor-link);
+.links li::before {
+    content: "* ";
+    color: var(--accent-dim);
 }
 
-.ttt-new:hover,
-.ttt-new:focus-visible {
-    color: var(--warm-bright);
-    text-shadow: 0 0 8px rgba(255, 178, 62, 0.9);
-}
-
-.ttt-new:focus-visible {
-    outline: 1px dashed var(--warm);
-    outline-offset: 3px;
-}
-
-.ttt-new:active {
-    border-color: var(--bevel-dark) var(--bevel-light) var(--bevel-light) var(--bevel-dark);
+.links a {
+    display: inline-block;
+    padding: 2px 0;
 }
 
 .diff {
@@ -570,9 +479,7 @@ footer {
 
     a,
     th,
-    td,
-    .ttt-cell,
-    .window.animating {
+    td {
         transition: none;
     }
 }
@@ -623,202 +530,14 @@ footer {
     }
 }
 
-.desk-on .window {
-    position: relative;
-}
-
-.desk-on .titlebar {
-    cursor: var(--cursor-link);
-    -webkit-user-select: none;
-    user-select: none;
-    touch-action: none;
-}
-
-.desk-on .titlebar:focus-visible {
-    outline: 1px dashed var(--warm);
-    outline-offset: -3px;
-}
-
-.window.is-free {
-    position: fixed;
-    margin: 0;
-    min-width: 0;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-}
-
-.window.is-free .titlebar {
-    flex: none;
-}
-
-.window.is-free .body {
-    flex: 1 1 auto;
-    min-height: 0;
-    overflow: auto;
-}
-
-.window.animating {
-    transition: width 0.22s ease, height 0.22s ease;
-}
-
-.window.collapsed .body {
-    display: none;
-}
-
-.window.collapsed .titlebar {
-    border-bottom: 0;
-    padding: 2px 4px 2px 8px;
-    gap: 8px;
-}
-
-.window.collapsed .titlebar h2 {
-    font-size: 0.6rem;
-    letter-spacing: 0.04em;
-}
-
-.window.collapsed .buttons {
-    gap: 2px;
-}
-
-.window.collapsed .buttons i {
-    width: 14px;
-    height: 14px;
-    font-size: 0.45rem;
-    border-width: 1px;
-}
-
-.rz {
-    display: none;
-    position: absolute;
-    z-index: 3;
-}
-
-.desk-on .rz {
-    display: block;
-}
-
-.window.collapsed .rz {
-    display: none;
-}
-
-.rz-n  { top: 0;    left: 10px;  right: 10px; height: 6px; cursor: ns-resize; }
-.rz-s  { bottom: 0; left: 10px;  right: 10px; height: 6px; cursor: ns-resize; }
-.rz-e  { right: 0;  top: 10px;   bottom: 10px; width: 6px; cursor: ew-resize; }
-.rz-w  { left: 0;   top: 10px;   bottom: 10px; width: 6px; cursor: ew-resize; }
-.rz-ne { top: 0;    right: 0;  width: 12px; height: 12px; cursor: nesw-resize; }
-.rz-sw { bottom: 0; left: 0;   width: 12px; height: 12px; cursor: nesw-resize; }
-.rz-nw { top: 0;    left: 0;   width: 12px; height: 12px; cursor: nwse-resize; }
-.rz-se { bottom: 0; right: 0;  width: 12px; height: 12px; cursor: nwse-resize; }
-
-html.ui-dragging,
-html.ui-dragging * {
-    -webkit-user-select: none !important;
-    user-select: none !important;
-}
-
-.reset-ui {
-    display: none;
-    position: fixed;
-    left: 16px;
-    bottom: 16px;
-    z-index: 15;
-    padding: 8px 12px;
-    font-family: var(--font-pixel);
-    font-size: 0.62rem;
-    letter-spacing: 0.06em;
-    text-transform: lowercase;
-    color: var(--warm);
-    background: #0a1019;
-    border: 2px solid;
-    border-color: var(--bevel-light) var(--bevel-dark) var(--bevel-dark) var(--bevel-light);
-    box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.55);
-    cursor: var(--cursor-link);
-}
-
-.desk-on .reset-ui:not([hidden]) {
-    display: block;
-}
-
-.reset-ui:hover,
-.reset-ui:focus-visible {
-    color: var(--warm-bright);
-    text-shadow: 0 0 8px rgba(255, 178, 62, 0.9);
-}
-
-.reset-ui:focus-visible {
-    outline: 1px dashed var(--warm);
-    outline-offset: 3px;
-}
-
-.reset-ui:active {
-    border-color: var(--bevel-dark) var(--bevel-light) var(--bevel-light) var(--bevel-dark);
-    transform: translate(1px, 1px);
-}
-
-.ui-hint {
-    display: none;
-    position: fixed;
-    left: 16px;
-    bottom: 16px;
-    z-index: 15;
-    margin: 0;
-    padding: 10px 14px;
-    font-family: var(--font-pixel);
-    font-size: 0.62rem;
-    letter-spacing: 0.06em;
-    text-transform: lowercase;
-    color: var(--muted);
-    text-shadow: 0 1px 0 var(--bg), 0 0 6px var(--bg);
-    pointer-events: none;
-}
-
-.desk-on .ui-hint {
-    display: block;
-}
-
-.reset-ui:not([hidden]) + .ui-hint {
-    display: none;
-}
-
 @media (pointer: coarse) {
-    .ttt-cell {
-        min-height: 2.8rem;
-    }
-
-    .ttt-new {
-        padding: 10px 14px;
+    .links a {
+        padding: 8px 0;
     }
 
     .credits a {
         display: inline-block;
         padding: 6px 2px;
-    }
-}
-
-@media (max-width: 480px), (pointer: coarse) {
-    .ttt-body {
-        flex-direction: column;
-        gap: 8px;
-    }
-
-    .ttt-board {
-        width: 100%;
-        max-width: 12rem;
-        gap: 4px;
-    }
-
-    .ttt-cell {
-        font-size: 1rem;
-    }
-
-    .ttt-side {
-        flex: none;
-        width: 100%;
-    }
-
-    .ttt-body .ttt-status {
-        min-height: 1.2em;
     }
 }
 

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="lukasvx's little corner of the internet.">
+    <meta name="theme-color" content="#04060b">
+    <meta name="color-scheme" content="dark">
+    <link rel="icon" type="image/svg+xml" href="img/favicon.svg?v=23">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png?v=23">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16.png?v=23">
+    <link rel="preload" href="fonts/VT323-Regular.ttf" as="font" type="font/ttf" crossorigin>
+    <link rel="preload" href="fonts/Silkscreen-Regular.ttf" as="font" type="font/ttf" crossorigin>
+    <title>&#9734; lukasvx &#9734;</title>
+    <link rel="stylesheet" href="css/style.css?v=23">
+    <script src="js/main.js?v=23" defer></script>
+    <script src="js/desk.js?v=23" defer></script>
+    <script src="js/game.js?v=23" defer></script>
+</head>
+<body>
+    <div class="scene" id="scene" aria-hidden="true"></div>
+    <div class="glow" aria-hidden="true"></div>
+    <div class="smoke" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+    <div class="snow" aria-hidden="true"><div class="flakes f1"></div><div class="flakes f2"></div><div class="flakes f3"></div></div>
+    <div class="grain" aria-hidden="true"></div>
+
+    <div class="wrap">
+        <header class="site-header">
+            <h1 class="logo">lukasvx</h1>
+        </header>
+
+        <main>
+            <section class="window" id="about" aria-labelledby="about-title">
+                <div class="titlebar">
+                    <h2 id="about-title">about_me.txt</h2>
+                    <span class="buttons" aria-hidden="true"><i>_</i><i>&#9633;</i><i>x</i></span>
+                </div>
+                <div class="body">
+                    <p>Hi, I'm Lukas. I like music, video games, I sometimes read and I also play the e guitar.</p>
+                </div>
+            </section>
+
+            <section class="window" id="favourites" aria-labelledby="fav-title">
+                <div class="titlebar">
+                    <h2 id="fav-title">favourite_things.txt</h2>
+                    <span class="buttons" aria-hidden="true"><i>_</i><i>&#9633;</i><i>x</i></span>
+                </div>
+                <div class="body">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <th scope="row">music</th>
+                                <td>absolutely obsessed with Muse and Placebo, I also find myself listening to violent vira a lot lately</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">games</th>
+                                <td>favourites are the witcher 3 and kingdom come 2, sometimes I also play stardew valley</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">books</th>
+                                <td>love the witcher books</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <div class="row">
+                <section class="window" id="game" aria-labelledby="game-title">
+                    <div class="titlebar">
+                        <h2 id="game-title">game.exe</h2>
+                        <span class="buttons" aria-hidden="true"><i>_</i><i>&#9633;</i><i>x</i></span>
+                    </div>
+                    <div class="body ttt-body">
+                        <div class="ttt-board" id="ttt-board" role="group" aria-label="tic tac toe board"></div>
+                        <div class="ttt-side">
+                            <p class="ttt-status" id="ttt-status" aria-live="polite"></p>
+                            <button type="button" class="ttt-new" id="ttt-new">new game</button>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="window" id="time" aria-labelledby="time-title">
+                    <div class="titlebar">
+                        <h2 id="time-title">my_time.txt</h2>
+                        <span class="buttons" aria-hidden="true"><i>_</i><i>&#9633;</i><i>x</i></span>
+                    </div>
+                    <div class="body">
+                        <p class="clock"><time id="local-time">--:--:--</time></p>
+                        <p class="diff" id="time-diff"></p>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <footer>
+            <p class="credits">
+                fonts: <a href="fonts/OFL-VT323.txt">VT323</a> (Peter Hull) and
+                <a href="fonts/OFL-Silkscreen.txt">Silkscreen</a> (Jason Kottke), SIL Open Font License
+            </p>
+        </footer>
+    </div>
+
+    <button type="button" class="reset-ui" id="reset-ui" hidden>reset ui</button>
+    <p class="ui-hint">try moving the boxes</p>
+</body>
+</html>

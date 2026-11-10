@@ -9,12 +9,32 @@
     --line: #2a2a2d;
     --text: #e6e6e8;
     --muted: #9a9aa0;
+    --frame-w: clamp(26rem, 42vw, 40rem);
+    --su: max(calc(100vw / 320), calc(100vh / 180));
+}
+
+/* Moon: erased from the scene copy and drawn as a sprite in the left gutter,
+   so the centered frame doesn't hide it. Same scale as the scene image. */
+.scene {
+    --moon-w: min(calc(var(--su) * 50), calc((100vw - var(--frame-w)) / 2 * 0.8));
+    background-image: url("../img/scene-minimal.png?v=1");
+}
+
+.scene::after {
+    content: "";
+    position: absolute;
+    width: var(--moon-w);
+    aspect-ratio: 50 / 46;
+    left: calc((100vw - var(--frame-w)) / 4 - var(--moon-w) / 2);
+    top: calc(100vh - var(--su) * 168);
+    background: url("../img/moon.png?v=1") center / 100% 100% no-repeat;
+    image-rendering: pixelated;
 }
 
 .wrap {
     margin: 0 auto;
     max-width: none;
-    width: clamp(26rem, 42vw, 40rem);
+    width: var(--frame-w);
     padding: 16px 18px;
     background: var(--frame);
     border-left: 1px solid var(--line);
@@ -83,12 +103,18 @@ main {
 
 .links li {
     display: flex;
-    gap: 0.6ch;
+    align-items: baseline;
+    gap: 0.7em;
 }
 
 .links li::before {
-    content: "*";
-    color: var(--muted);
+    content: "";
+    flex: none;
+    width: 0.3em;
+    height: 0.3em;
+    background: var(--muted);
+    position: relative;
+    top: -0.2em;
 }
 
 table {
@@ -127,6 +153,10 @@ footer {
 }
 
 @media (max-width: 640px) {
+    .scene::after {
+        display: none;
+    }
+
     .wrap {
         width: calc(100% - 16px);
         min-height: 0;

@@ -1,0 +1,127 @@
+/* Minimal UI experiment.
+   Loaded after style.css; only restyles the UI (.wrap and its contents).
+   Scene, glow, smoke, snow, grain and vignette are untouched.
+   To revert: remove the <link> to this file in index.html (or delete this file). */
+
+:root {
+    --frame: #0b0b0c;
+    --box: #151516;
+    --line: #2a2a2d;
+    --text: #e6e6e8;
+    --muted: #9a9aa0;
+}
+
+.wrap {
+    margin: 0;
+    max-width: none;
+    width: clamp(22rem, 42vw, 40rem);
+    padding: 0 18px;
+    background: var(--frame);
+    border-right: 1px solid var(--line);
+    justify-content: center;
+}
+
+.site-header {
+    margin-top: 0;
+    text-align: left;
+    padding: 0 0 14px;
+}
+
+.logo {
+    font-size: clamp(1.6rem, 6vw, 2.2rem);
+    letter-spacing: 0.04em;
+    color: var(--text);
+    text-shadow: none;
+    animation: none;
+}
+
+main {
+    margin-bottom: 0;
+}
+
+.window {
+    margin: 0 0 10px;
+    background: var(--box);
+    border: 1px solid var(--line);
+    box-shadow: none;
+}
+
+.titlebar {
+    padding: 6px 12px;
+    background: none;
+    border-bottom: 1px solid var(--line);
+}
+
+.titlebar h2 {
+    font-size: 0.62rem;
+    color: var(--muted);
+}
+
+.buttons {
+    display: none;
+}
+
+.body,
+.row .body {
+    padding: 10px 12px;
+}
+
+.row {
+    gap: 10px;
+    margin-bottom: 0;
+}
+
+.row .titlebar h2 {
+    font-size: 0.62rem;
+}
+
+.clock {
+    color: var(--text);
+    text-shadow: none;
+}
+
+.links li::before {
+    color: var(--muted);
+}
+
+table {
+    background: none;
+    border: 0;
+}
+
+th,
+td {
+    padding: 8px 0;
+    border-bottom: 1px solid var(--line);
+}
+
+th {
+    padding-right: 12px;
+    border-right: 0;
+    background: none;
+    color: var(--muted);
+}
+
+tr:hover th,
+tr:hover td {
+    background: none;
+    color: var(--text);
+}
+
+footer {
+    padding: 10px 0 14px;
+    text-align: left;
+    font-size: 0.95rem;
+    text-shadow: none;
+}
+
+.credits {
+    margin-left: 0;
+}
+
+@media (max-width: 640px) {
+    .wrap {
+        width: 100%;
+        border-right: 0;
+    }
+}

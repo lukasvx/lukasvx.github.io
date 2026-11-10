@@ -101,20 +101,9 @@ main {
     text-shadow: none;
 }
 
-.links li {
-    display: flex;
-    align-items: baseline;
-    gap: 0.7em;
-}
-
+/* links only, no bullets */
 .links li::before {
-    content: "";
-    flex: none;
-    width: 0.3em;
-    height: 0.3em;
-    background: var(--muted);
-    position: relative;
-    top: -0.2em;
+    content: none;
 }
 
 table {

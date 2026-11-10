@@ -12,18 +12,19 @@
 }
 
 .wrap {
-    margin: 0;
+    margin: 0 auto;
     max-width: none;
     width: clamp(22rem, 42vw, 40rem);
     padding: 0 18px;
     background: var(--frame);
+    border-left: 1px solid var(--line);
     border-right: 1px solid var(--line);
     justify-content: center;
 }
 
 .site-header {
     margin-top: 0;
-    text-align: left;
+    text-align: center;
     padding: 0 0 14px;
 }
 
@@ -122,6 +123,7 @@ footer {
 @media (max-width: 640px) {
     .wrap {
         width: 100%;
+        border-left: 0;
         border-right: 0;
     }
 }

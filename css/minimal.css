@@ -14,8 +14,8 @@
 .wrap {
     margin: 0 auto;
     max-width: none;
-    width: clamp(22rem, 42vw, 40rem);
-    padding: 0 18px;
+    width: clamp(26rem, 42vw, 40rem);
+    padding: 16px 18px;
     background: var(--frame);
     border-left: 1px solid var(--line);
     border-right: 1px solid var(--line);
@@ -81,7 +81,13 @@ main {
     text-shadow: none;
 }
 
+.links li {
+    display: flex;
+    gap: 0.6ch;
+}
+
 .links li::before {
+    content: "*";
     color: var(--muted);
 }
 
@@ -122,8 +128,16 @@ footer {
 
 @media (max-width: 640px) {
     .wrap {
-        width: 100%;
-        border-left: 0;
-        border-right: 0;
+        width: calc(100% - 16px);
+        min-height: 0;
+        margin: 8px auto;
+        padding: 14px 10px;
+        justify-content: flex-start;
+    }
+}
+
+@media (max-width: 400px) {
+    .row {
+        grid-template-columns: minmax(0, 1fr);
     }
 }

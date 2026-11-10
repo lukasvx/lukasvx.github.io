@@ -16,7 +16,7 @@
 /* Moon: erased from the scene copy and drawn as a sprite in the left gutter,
    so the centered frame doesn't hide it. Same scale as the scene image. */
 .scene {
-    --moon-w: min(calc(var(--su) * 50), calc((100vw - var(--frame-w)) / 2 * 0.8));
+    --moon-w: min(calc(var(--su) * 50), calc((100vw - var(--frame-w)) / 2 * 0.8), 36vh);
     background-image: url("../img/scene-minimal.png?v=1");
 }
 
@@ -26,7 +26,7 @@
     width: var(--moon-w);
     aspect-ratio: 50 / 46;
     left: calc((100vw - var(--frame-w)) / 4 - var(--moon-w) / 2);
-    top: calc(100vh - var(--su) * 168);
+    top: max(calc(100vh - var(--su) * 168), 4vh);
     background: url("../img/moon.png?v=1") center / 100% 100% no-repeat;
     image-rendering: pixelated;
 }

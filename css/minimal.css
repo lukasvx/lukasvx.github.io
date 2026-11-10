@@ -39,11 +39,10 @@
     background: var(--frame);
     border-left: 1px solid var(--line);
     border-right: 1px solid var(--line);
-    justify-content: center;
 }
 
 .site-header {
-    margin-top: 0;
+    margin-top: auto;
     text-align: center;
     padding: 0 0 14px;
 }
@@ -57,7 +56,7 @@
 }
 
 main {
-    margin-bottom: 0;
+    margin-bottom: auto;
 }
 
 .window {
@@ -132,13 +131,13 @@ tr:hover td {
 
 footer {
     padding: 10px 0 14px;
-    text-align: left;
+    text-align: center;
     font-size: 0.95rem;
     text-shadow: none;
 }
 
 .credits {
-    margin-left: 0;
+    margin-left: auto;
 }
 
 @media (max-width: 640px) {
@@ -151,7 +150,6 @@ footer {
         min-height: 0;
         margin: 8px auto;
         padding: 14px 10px;
-        justify-content: flex-start;
     }
 }
 

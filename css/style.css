@@ -141,7 +141,7 @@ footer {
 
 main {
     padding: 24px 22px 0;
-    border: 2px solid #fff;
+    border: 1px solid #fff;
     outline: 1px dashed #fff;
     outline-offset: 5px;
 }

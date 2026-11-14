@@ -13,7 +13,7 @@
 
 html {
     background: #000;
-    font-size: clamp(14px, 4.4vw, 20px);
+    font-size: clamp(13px, 4vw, 18px);
     -webkit-text-size-adjust: 100%;
 }
 

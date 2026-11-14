@@ -13,7 +13,6 @@
 
 html {
     background: #000;
-    /* 16px on phones (keeps text readable), up to 18px on larger screens */
     font-size: clamp(16px, 2.5vw, 18px);
     -webkit-text-size-adjust: 100%;
     text-size-adjust: 100%;

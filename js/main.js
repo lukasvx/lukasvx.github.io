@@ -1,40 +1,6 @@
 (function () {
     "use strict";
 
-    var SCENE_W = 320;
-    var SCENE_H = 180;
-    var CABIN_X = 250;
-
-    var WINDOWS_X = 250;
-    var WINDOWS_Y = 128;
-
-    var CHIMNEY_X = 264;
-    var CHIMNEY_Y = 98;
-
-    var root = document.documentElement;
-    var scene = document.getElementById("scene");
-
-    function placeGlow() {
-        var vw = (scene && scene.clientWidth) || window.innerWidth;
-        var vh = (scene && scene.clientHeight) || window.innerHeight;
-        var scale = Math.max(vw / SCENE_W, vh / SCENE_H);
-        var offsetX = (vw - SCENE_W * scale) * (CABIN_X / SCENE_W);
-        var offsetY = vh - SCENE_H * scale;
-        root.style.setProperty("--glow-x", offsetX + WINDOWS_X * scale + "px");
-        root.style.setProperty("--glow-y", offsetY + WINDOWS_Y * scale + "px");
-        root.style.setProperty("--glow-size", 70 * scale + "px");
-        root.style.setProperty("--smoke-x", offsetX + CHIMNEY_X * scale + "px");
-        root.style.setProperty("--smoke-y", offsetY + CHIMNEY_Y * scale + "px");
-        root.style.setProperty("--u", scale + "px");
-    }
-
-    placeGlow();
-
-    window.addEventListener("resize", placeGlow);
-    if (scene && window.ResizeObserver) {
-        new ResizeObserver(placeGlow).observe(scene);
-    }
-
     var clock = document.getElementById("local-time");
     var diffEl = document.getElementById("time-diff");
     var TIME_ZONE = "Europe/Berlin";

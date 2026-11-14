@@ -95,7 +95,7 @@ dd {
     margin: 0 0 0 1.4em;
 }
 
-dd::first-letter {
+dd:first-of-type::first-letter {
     text-transform: uppercase;
 }
 

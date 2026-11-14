@@ -65,7 +65,7 @@ h2 {
     font: 400 0.8rem/1.4 var(--mono);
     letter-spacing: 0.15em;
     text-transform: lowercase;
-    color: var(--muted);
+    color: var(--accent);
 }
 
 p {

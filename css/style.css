@@ -30,10 +30,7 @@ body {
     padding: 40px 16px 24px;
     display: flex;
     flex-direction: column;
-}
-
-main {
-    flex: 1;
+    justify-content: center;
 }
 
 section {

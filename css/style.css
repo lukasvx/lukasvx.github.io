@@ -87,10 +87,6 @@ dt {
     color: var(--accent);
 }
 
-dt::first-letter {
-    text-transform: uppercase;
-}
-
 dt:first-child {
     margin-top: 0;
 }

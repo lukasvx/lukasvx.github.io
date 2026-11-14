@@ -99,6 +99,10 @@ dd {
     margin: 0 0 0 1.4em;
 }
 
+dd::first-letter {
+    text-transform: uppercase;
+}
+
 ul {
     margin: 0;
     padding: 0;

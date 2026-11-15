@@ -114,18 +114,6 @@ a:focus-visible {
     outline: none;
 }
 
-.clock {
-    font: 700 1.6rem/1.2 var(--mono);
-    font-variant-numeric: tabular-nums;
-    color: #fff;
-}
-
-.diff {
-    margin-top: 0.125rem;
-    font-size: 0.8rem;
-    color: var(--muted);
-}
-
 ::selection {
     background: var(--accent);
     color: #000;
